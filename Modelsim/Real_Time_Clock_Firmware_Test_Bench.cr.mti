@@ -1,0 +1,80 @@
+{G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_Mux.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_Mux.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Real_Time_Clock_Mux
+-- Compiling architecture Arch_DUT of Real_Time_Clock_Mux
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/test_bench_T.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/test_bench_T.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity test_bench_T
+-- Compiling architecture Archtest_bench_T of test_bench_T
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Handler.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Handler.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package NUMERIC_STD
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Real_Time_Clock_I2C_Handler
+-- Compiling architecture Arch_DUT of Real_Time_Clock_I2C_Handler
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_Firmware_Test_Bench.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_Firmware_Test_Bench.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package NUMERIC_STD
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package util
+-- Compiling entity Real_Time_Clock_Firmware_Test_Bench
+-- Compiling architecture Archtest_bench of Real_Time_Clock_Firmware_Test_Bench
+-- Loading entity Real_Time_Clock_I2C_Driver
+-- Loading entity Real_Time_Clock_I2C_Handler
+-- Loading entity PushButton_Controller
+-- Loading entity Real_Time_Clock_Mux
+-- Loading entity Baud_Rate_Generator
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/PushButton_Controller.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/PushButton_Controller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity PushButton_Controller
+-- Compiling architecture Arch_DUT of PushButton_Controller
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Baud_Rate_Generator.vhd} {1 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Baud_Rate_Generator.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Baud_Rate_Generator
+-- Compiling architecture Arch_DUT of Baud_Rate_Generator
+
+} {} {}} {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Driver.vhd} {2 {vcom -work work -2002 -explicit -stats=none {G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Driver.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Real_Time_Clock_I2C_Driver
+-- Compiling architecture logic of Real_Time_Clock_I2C_Driver
+** Warning: G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Driver.vhd(68): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Driver.vhd(72): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: G:/My Drive/2021/FPGA Firmware/FPGA Firmware Code/Projects/Real_Time_Clock_Firmware/src/Real_Time_Clock_I2C_Driver.vhd(76): (vcom-1937) Choice in CASE statement alternative must be locally static.
+
+} {} {}}
