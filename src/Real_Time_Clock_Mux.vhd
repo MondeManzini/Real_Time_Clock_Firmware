@@ -49,7 +49,7 @@ entity Real_Time_Clock_Mux is
         Month_Century       : in std_logic_vector(7 downto 0);
         Year                : in std_logic_vector(7 downto 0);
         Baud_Rate_Enable    : in std_logic;  
-        Ready_1             : in std_logic
+        Ready               : in std_logic
     );
 
 end Real_Time_Clock_Mux;
@@ -130,7 +130,7 @@ begin
             Message_done            <= '0';
         elsif Clk'event and Clk = '1' then
 
-            if (Ready_1 = '1') and busy_i = '0' then
+            if (Ready = '1') and busy_i = '0' then
                 Send_Operation <= '1';
             else
                 Send_Operation <= '0';

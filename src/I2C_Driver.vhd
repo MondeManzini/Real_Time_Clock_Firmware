@@ -1,10 +1,17 @@
 --------------------------------------------------------------------------------
 --
---   FileName:         i2c_master.vhd
---   Dependencies:     none
---   Design Software:  Quartus II
---   Version History
---   Version 1.0 16/04/2019
+-- FileName:            : I2C_Driver.vhd
+-- Modified by          : Glen Taylor 
+--                      : Monde Manzini            
+-- Version              : 00.00.01 
+-- Change Note          : 
+-- Tested               :  June 2021
+-- Type of Test         : (Simulation only).
+-- Test Bench file name : Real_Time_Clock_Firmware_Test_Bench.vhd
+-- located at           : 
+-- Test do file         : Real_Time_Clock_Firmware_Test_Bench.do
+-- located at           : 
+-- Outstanding          : Integration Testing  
 -- 
 --------------------------------------------------------------------------------
 
@@ -12,10 +19,10 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_unsigned.all;
 
-ENTITY Real_Time_Clock_I2C_Driver IS
+ENTITY I2C_Driver IS
   GENERIC(
-    input_clk : INTEGER := 50_000_000;               --input clock speed from user logic in Hz
-    bus_clk   : INTEGER := 400_000);                 --speed the i2c bus (scl) will run at in Hz
+    input_clk : INTEGER := 50_000_000; --input clock speed from user logic in Hz
+    bus_clk   : INTEGER := 400_000);   --speed the i2c bus (scl) will run at in Hz
   PORT(
     clk       : IN     STD_LOGIC;                    --system clock
     reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -28,10 +35,10 @@ ENTITY Real_Time_Clock_I2C_Driver IS
     ack_error : BUFFER STD_LOGIC;                    --flag if improper acknowledge from slave
     sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
-END Real_Time_Clock_I2C_Driver;
+END I2C_Driver;
 
-ARCHITECTURE logic OF Real_Time_Clock_I2C_Driver IS
-  CONSTANT divider     :  INTEGER := (input_clk/bus_clk)/4; --number of clocks in 1/4 cycle of scl
+ARCHITECTURE logic OF I2C_Driver IS
+  CONSTANT divider  :  INTEGER := (input_clk/bus_clk)/4; --number of clocks in 1/4 cycle of scl
   TYPE machine IS(ready, start, command, slv_ack1, wr, rd, slv_ack2, mstr_ack, stop); --needed states
   SIGNAL state         : machine;                        --state machine
   SIGNAL data_clk      : STD_LOGIC;                      --data clock for sda
@@ -50,31 +57,25 @@ BEGIN
   --generate the timing for the bus clock (scl_clk) and the data clock (data_clk)
   PROCESS(clk, reset_n)
     VARIABLE count  :  INTEGER RANGE 0 TO divider*4;  --timing for clock generation
---      VARIABLE count  :  INTEGER RANGE 0 TO 500;
   BEGIN
     IF(reset_n = '0') THEN                --reset asserted
       stretch <= '0';
       count := 0;
-      
     ELSIF(clk'EVENT AND clk = '1') THEN
       data_clk_prev <= data_clk;          --store previous value of data clock
       IF(count = divider*4-1) THEN        --end of timing cycle
- --     IF(count = 499) THEN
         count := 0;                       --reset timer
       ELSIF(stretch = '0') THEN           --clock stretching from slave not detected
         count := count + 1;               --continue clock generation timing
       END IF;
       CASE count IS
         WHEN 0 TO divider-1 =>            --first 1/4 cycle of clocking
- --       WHEN 0 TO 124 =>
           scl_clk <= '0';
           data_clk <= '0';
         WHEN divider TO divider*2-1 =>    --second 1/4 cycle of clocking
---        WHEN 125 TO 249 =>
           scl_clk <= '0';
           data_clk <= '1';
         WHEN divider*2 TO divider*3-1 =>  --third 1/4 cycle of clocking
---        WHEN 250 TO 374 =>
           scl_clk <= '1';                 --release scl
           IF(scl = '0') THEN              --detect if slave is stretching clock
             stretch <= '1';
@@ -93,15 +94,14 @@ BEGIN
   PROCESS(clk, reset_n)
   BEGIN
     IF(reset_n = '0') THEN                 --reset asserted
-      state     <= ready;                      --return to initial state
-      busy      <= '1';                         --indicate not available
-      scl_ena   <= '0';                      --sets scl high impedance
-      sda_int   <= '1';                      --sets sda high impedance
+      state <= ready;                      --return to initial state
+      busy <= '1';                         --indicate not available
+      scl_ena <= '0';                      --sets scl high impedance
+      sda_int <= '1';                      --sets sda high impedance
       ack_error <= '0';                    --clear acknowledge error flag
-      bit_cnt   <= 7;                        --restarts data bit counter
-      data_rd   <= "00000000";               --clear data read port
-      data_rx   <= (OTHERS=>'0');  
-  ELSIF(clk'EVENT AND clk = '1') THEN
+      bit_cnt <= 7;                        --restarts data bit counter
+      data_rd <= "00000000";               --clear data read port
+    ELSIF(clk'EVENT AND clk = '1') THEN
       IF(data_clk = '1' AND data_clk_prev = '0') THEN  --data clock rising edge
         CASE state IS
           WHEN ready =>                      --idle state
