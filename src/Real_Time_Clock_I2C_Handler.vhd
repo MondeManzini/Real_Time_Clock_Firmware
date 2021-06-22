@@ -331,15 +331,15 @@ begin
                      elsif Read_Count = 2 then
                         Minutes_out_i        <= data_read; 
                      elsif Read_Count = 3 then
-                        Hours_out            <= data_read;                          
+                        Hours_out_i          <= data_read;                          
                      elsif Read_Count = 4 then
-                        Day_out              <= data_read;                          
+                        Day_out_i            <= data_read;                          
                      elsif Read_Count = 5 then
-                        Date_out             <= data_read;                          
+                        Date_out_i           <= data_read;                          
                      elsif Read_Count = 6 then
-                        Month_Century_out    <= data_read;                            
+                        Month_Century_out_i  <= data_read;                            
                      elsif Read_Count = 7 then
-                        Year_out             <= data_read;                         
+                        Year_out_i           <= data_read;                         
                      end if;                           
                   elsif Busy_i = '1' and Read_Count = 8 then
                      Slave_read_nWrite    <= '1';

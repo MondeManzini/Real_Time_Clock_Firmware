@@ -247,9 +247,11 @@ type Test_I2C_Read_States is (StartEdge, StartFallingEdge, WriteData, RisingEdge
                             WriteAckData_SA, RisingEdgeAckData_SA, ReadAckData_SA, FallingEdgeAckData_SA, WriteData_Data, RisingEdgeData_Data, 
                             Read_Slave_Data_Data,  Test_Byte_Complete, FallingEdgeData_Data, WriteAckData_Data, RisingEdgeAckData_Data, ReadAckData_Data, FallingEdgeAckData_Data,
                             AckRisingEdgeData,WaitStopData);
+type Real_Time_Counters_States is (Idle, mS_counter, Min_counter, Hrs_counter, Days_counter, Mon_Cen_counter, Years_counter);
 signal I2C_Test_State           : I2C_Test_States;
 signal Test_I2C_Config_State    : Test_I2C_Config_States;
 signal Test_I2C_Read_State      : Test_I2C_Read_States;
+signal Real_Time_Counters_State : Real_Time_Counters_States;
 
 -- signal TX_I2C_State  : TX_I2C_States;
 -- signal Mux_State    : Mux_States;
@@ -408,7 +410,9 @@ data_test: process(CLK_I_i, RST_I_i)
     variable Sample_Count       : integer range 0 to 1002;
     variable Latch_Sample_Count : integer range 0 to 1002;
     variable bus_clk_test       : integer range 0 to 400_000;
-    
+    variable v_TIME             : time := 0 ns;
+    variable vee_TIME           : time := 0 ns;
+
 begin
     if RST_I_i = '0' then
         -- bus_clk_test              := 400_000; -- Hz - mus be added to memory                      
@@ -447,7 +451,11 @@ begin
         --        lockout_i                <= '0';            
         --    end if;
         --end if;
-        
+        --v_TIME := now;
+        ---- STUFF HAPPENS
+        --vee_TIME := now - V_TIME; --used to find delta time
+        --report "current time = " & time'image(now);
+
         if initialation_Status_i = '1' then 
             if Busy_i = '0' and Busy_Mux_i = '0' and busy_mux_lockout_i = '1' then   
                 PushButton_Start_i  <= '1';
@@ -657,13 +665,13 @@ begin
                             if Start_Detected = '1' then
                               Delay_Count               <= 0;
                               Test_I2C_Read_State       <= WriteData;
-                              Seconds_TestData_i        <= Seconds_TestData_i;
-                              Minutes_TestData_i        <= Minutes_TestData_i;
-                              Hours_TestData_i          <= Hours_TestData_i;
-                              Days_TestData_i           <= Days_TestData_i;
-                              Dates_TestData_i          <= Dates_TestData_i;
-                              Months_Century_TestData_i <= Months_Century_TestData_i;
-                              Years_TestData_i          <= Years_TestData_i;
+                              --Seconds_TestData_i        <= Seconds_TestData_i;
+                              --Minutes_TestData_i        <= Minutes_TestData_i;
+                              --Hours_TestData_i          <= Hours_TestData_i;
+                              --Days_TestData_i           <= Days_TestData_i;
+                              --Dates_TestData_i          <= Dates_TestData_i;
+                              --Months_Century_TestData_i <= Months_Century_TestData_i;
+                              --Years_TestData_i          <= Years_TestData_i;
                             end if;
                         elsif Busy_i = '0' then
                             Test_I2C_Read_State     <= StartEdge;
@@ -786,13 +794,13 @@ begin
                               Delay_Count         <= 0;
                               Test_I2C_Read_State <= WriteData_SA;
                                 --Test_Byte_i         <= x"00";
-                              Seconds_TestData_i        <= Seconds_TestData_i;
-                              Minutes_TestData_i        <= Minutes_TestData_i;
-                              Hours_TestData_i          <= Hours_TestData_i;
-                              Days_TestData_i           <= Days_TestData_i;
-                              Dates_TestData_i          <= Dates_TestData_i;
-                              Months_Century_TestData_i <= Months_Century_TestData_i;
-                              Years_TestData_i          <= Years_TestData_i;
+                              --Seconds_TestData_i        <= Seconds_TestData_i;
+                              --Minutes_TestData_i        <= Minutes_TestData_i;
+                              --Hours_TestData_i          <= Hours_TestData_i;
+                              --Days_TestData_i           <= Days_TestData_i;
+                              --Dates_TestData_i          <= Dates_TestData_i;
+                              --Months_Century_TestData_i <= Months_Century_TestData_i;
+                              --Years_TestData_i          <= Years_TestData_i;
                             end if;
                         else
                             Test_I2C_Read_State      <= StartFallingEdgeData_SA;
@@ -867,13 +875,13 @@ begin
                     when ReadAckData_SA =>                      
                         if Delay_Count = 31 then 
                             -- Test_Byte_i         <= X"00";
-                            Seconds_TestData_i          <= Seconds_TestData_i;
-                            Minutes_TestData_i          <= Minutes_TestData_i;
-                            Hours_TestData_i            <= Hours_TestData_i;
-                            Days_TestData_i             <= Days_TestData_i;
-                            Dates_TestData_i            <= Dates_TestData_i;
-                            Months_Century_TestData_i   <= Months_Century_TestData_i;
-                            Years_TestData_i            <= Years_TestData_i;
+                            --Seconds_TestData_i          <= Seconds_TestData_i;
+                            --Minutes_TestData_i          <= Minutes_TestData_i;
+                            --Hours_TestData_i            <= Hours_TestData_i;
+                            --Days_TestData_i             <= Days_TestData_i;
+                            --Dates_TestData_i            <= Dates_TestData_i;
+                            --Months_Century_TestData_i   <= Months_Century_TestData_i;
+                            --Years_TestData_i            <= Years_TestData_i;
                             Delay_Count                 <= 0;
                             Test_I2C_Read_State <= FallingEdgeAckData_SA;
                         else
@@ -1063,47 +1071,86 @@ begin
                         end if;
                 end case;
         end case;
-
         -------------------------------
         -- Real Time Counters
         -------------------------------
-    -- Seconds counter
-    if OnemS_sStrobe = '1' then                             -- Simulates 1 sec for test purposes
-      Seconds_TestData_i  <= Seconds_TestData_i + '1'; 
-    end if;
-    Seconds_TestData_int  <= conv_integer(Seconds_TestData_i);
+        Seconds_TestData_int  <= conv_integer(Seconds_TestData_i);                
+        Minutes_TestData_int <= conv_integer(Minutes_TestData_i);
+        Hours_TestData_int      <= conv_integer(Hours_TestData_i);
+        Days_TestData_int      <= conv_integer(Days_TestData_i);
+        Months_Century_TestData_int <= conv_integer(Months_Century_TestData_i);
 
-    -- Minutes counter
-    Minutes_TestData_int <= conv_integer(Minutes_TestData_i);
-    if Seconds_TestData_i = x"3c" then  -- 60 ms = 60 secs for simulation purposes
-      Minutes_TestData_i <= Minutes_TestData_i + '1';
-      Seconds_TestData_i <= x"00";
+        case Real_Time_Counters_State is 
+
+            when mS_counter =>
+                -- Seconds counter
+                if OnemS_sStrobe = '1' then
+                    if Seconds_TestData_i = x"1d" then
+                        Real_Time_Counters_State    <= Min_counter;
+                        Seconds_TestData_i          <= x"00";
+                    else
+                        Seconds_TestData_i          <= Seconds_TestData_i + '1';
+                    end if; 
+                end if;
+                
+            when Min_counter =>
+                -- Minutes counter
+                if Minutes_TestData_i = x"03" then      -- 60 ms = 60 secs for simulation purposes
+                    Real_Time_Counters_State    <= Hrs_counter;
+                    Minutes_TestData_i          <= x"00";  
+                else
+                    Minutes_TestData_i          <= Minutes_TestData_i + '1';
+                    Real_Time_Counters_State    <= mS_counter;
+                end if;
+
+            when Hrs_counter =>
+                -- Hours counter
+                if Hours_TestData_i = x"06" then    -- 06 mns = 1 hrs for simulation purposes
+                    Real_Time_Counters_State    <= Days_counter;
+                    Hours_TestData_i            <= x"00";
+                else
+                    Hours_TestData_i            <= Hours_TestData_i + '1';
+                    Real_Time_Counters_State    <= Min_counter;
+                end if;
+
+            when Days_counter =>
+                -- Days counter
+                if Days_TestData_i = x"1e" then  
+                    Real_Time_Counters_State    <= Mon_Cen_counter;
+                    Days_TestData_i             <= x"00";
+                else
+                    Days_TestData_i             <= Days_TestData_i + '1';
+                    Real_Time_Counters_State    <= Hrs_counter;
+                end if;
+
+            when Mon_Cen_counter =>    
+                -- Months counter
+                if Months_Century_TestData_i = x"0c" then
+                    Real_Time_Counters_State    <= Years_counter;
+                    Months_Century_TestData_i   <= x"00";
+                else
+                    Months_Century_TestData_i   <= Months_Century_TestData_i + '1';
+                    Real_Time_Counters_State    <= Days_counter;
+                end if;
+
+            when Years_counter =>
+                -- Months counter
+                Years_TestData_i   <= Years_TestData_i + '1';
+                Real_Time_Counters_State    <= Idle;
+
+            when Idle =>
+                Seconds_TestData_i          <= x"00";
+                Minutes_TestData_i          <= x"00";
+                Hours_TestData_i            <= x"00";
+                Days_TestData_i             <= x"00";
+                Months_Century_TestData_i   <= x"00";
+                Years_TestData_i            <= x"00";
+                Real_Time_Counters_State    <= mS_counter;
+        end case;
     end if;
 
-    -- Hours counter
-    Hours_TestData_int      <= conv_integer(Hours_TestData_i);
-    if Minutes_TestData_i = x"06" then  -- 06 mns = 1 hrs for simulation purposes
-      Hours_TestData_i      <= Hours_TestData_i + '1';
-      Minutes_TestData_i    <= x"00";
-    end if;
-
-    -- Days counter
-    Days_TestData_int      <= conv_integer(Days_TestData_i);
-    if Hours_TestData_i = x"18" then  
-      Days_TestData_i      <= Days_TestData_i + '1';
-      Hours_TestData_i    <= x"00";
-    end if;
-
-    -- Months counter
-    Months_Century_TestData_int <= conv_integer(Months_Century_TestData_i);
-    if Days_TestData_i = x"1e" then  
-    Months_Century_TestData_i   <= Months_Century_TestData_i + '1';
-      Days_TestData_i            <= x"00";
-    end if;    
-        
-  end if;
 end process;      
-        
+
         
    strobe: process
    begin
