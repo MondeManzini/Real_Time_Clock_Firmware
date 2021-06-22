@@ -141,8 +141,6 @@ begin
             -----------------------------------------
             if Send_Operation = '1' then
                 send_msg            <= '1';
-                no_of_chars2send    <= 15; 
-
                 data2send(0)        <= Preamble1;
                 data2send(1)        <= Preamble2;
                 data2send(2)        <= Preamble3;
