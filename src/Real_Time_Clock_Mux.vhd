@@ -41,6 +41,7 @@ entity Real_Time_Clock_Mux is
         ----------------------------------------------------
             -- Input Signals -- 
         Initialation_Status : in std_logic;
+        RTC_Busy            : in std_logic;
         Seconds             : in std_logic_vector(7 downto 0);  
         Minutes             : in std_logic_vector(7 downto 0);
         Hours               : in std_logic_vector(7 downto 0);
@@ -312,7 +313,9 @@ begin
                     if no_of_chars = no_of_chars2send then
                         -- tx_state    <= idle;
                         --if Gen_Sample_Rate_i = '1' then
-                            Get_Sample_i <= '1';
+                            if (RTC_Busy = '0') then
+                                Get_Sample_i <= '1';
+                            end if;
                             no_of_chars  <= 0;
                             done         <= '1';
                             comms_done   <= '1';
