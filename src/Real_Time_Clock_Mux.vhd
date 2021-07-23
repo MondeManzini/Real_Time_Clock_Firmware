@@ -115,7 +115,7 @@ function reverse_any_bus (a : in std_logic_vector)
 
 begin
 
-    UART_TXD    <= not SerDataOut;
+    UART_TXD    <= SerDataOut;
     Get_Sample  <= Get_Sample_i;
     busy        <= busy_i;
     

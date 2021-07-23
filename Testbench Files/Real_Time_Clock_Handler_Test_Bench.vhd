@@ -113,6 +113,7 @@ component Real_Time_Clock_I2C_Handler IS
   Date_in              : in std_logic_vector(7 downto 0); 
   Month_Century_in     : in std_logic_vector(7 downto 0); 
   Year_in              : in std_logic_vector(7 downto 0); 
+  Write_RTC            : in std_logic;
   -- Outputs for Mux
   Seconds_out          : out std_logic_vector(7 downto 0); 
   Minutes_out          : out std_logic_vector(7 downto 0); 
@@ -199,6 +200,43 @@ component Real_Time_Clock_I2C_Mux is
     Ready               : in std_logic
     );
 end component;
+
+----------------------------------------------------------------------
+-- Demux Signals and Component
+----------------------------------------------------------------------
+signal Software_to_Controller_UART_RXD_i  : std_logic;
+signal Time_Stamp_Byte_3_i                : std_logic_vector(7 downto 0);
+signal Time_Stamp_Byte_2_i                : std_logic_vector(7 downto 0);
+signal Time_Stamp_Byte_1_i                : std_logic_vector(7 downto 0);
+signal Time_Stamp_Byte_0_i                : std_logic_vector(7 downto 0);
+signal Dig_MilliSecond_B1_i               : std_logic_vector(7 downto 0);
+signal Dig_MilliSecond_B0_i               : std_logic_vector(7 downto 0);
+signal Dig_Outputs_Ready_i                : std_logic;
+signal Demux_Data_Ready_i                 : std_logic;
+signal Version_Demux_i                    : std_logic_vector(7 downto 0);
+signal Main_Demux_Version_Name_i          : std_logic_vector(255 downto 0); 
+signal Main_Demux_Version_Number_i        : std_logic_vector(63 downto 0);  
+signal Main_Demux_Version_Ready_i         : std_logic; 
+signal Module_Number_i                    : std_logic_vector(7 downto 0);
+
+component Real_Time_Clock_Demux is
+  port (
+    CLK_I                               : in  std_logic;
+    RST_I                               : in  std_logic;
+    UART_RXD                            : in  std_logic;
+    Seconds_out                         : out std_logic_vector(7 downto 0); 
+    Minutes_out                         : out std_logic_vector(7 downto 0); 
+    Hours_out                           : out std_logic_vector(7 downto 0); 
+    Day_out                             : out std_logic_vector(7 downto 0); 
+    Date_out                            : out std_logic_vector(7 downto 0); 
+    Month_Century_out                   : out std_logic_vector(7 downto 0); 
+    Year_out                            : out std_logic_vector(7 downto 0); 
+    SET_Timer                           : out std_logic 
+    );
+end component Real_Time_Clock_Demux;
+
+signal SET_Timer_i                        : std_logic;
+
 
 ----------------------------------------------------------------------
 -- Baud Rate for Mux Signals and Component
@@ -316,7 +354,21 @@ signal Get_RTC_i                       : std_logic;
 -- Messages following the software scripts 
 ------------------------------------------
 
-                                                                                                                                                 
+signal write_rtc_cmd        : std_logic_vector(140 downto 0):=                                
+                            stop_bit & X"15" &                    -- CRC L
+                            start_bit & stop_bit & X"27" &        -- CRC H 
+                            start_bit & stop_bit & X"15" &        -- Year - 2021
+                            start_bit & stop_bit & X"07" &        -- Month - July
+                            start_bit & stop_bit & X"1d" &        -- Date - 28
+                            start_bit & stop_bit & X"04" &        -- Day - Thurs
+                            start_bit & stop_bit & X"16" &        -- Hours - 22h
+                            start_bit & stop_bit & X"2d" &        -- Minutes - 45 
+                            start_bit & stop_bit & X"0D" &        -- Seconds - 14 
+                            start_bit & stop_bit & X"80" &        -- Mode
+                            start_bit & stop_bit & X"23" &        -- Length
+                            start_bit & stop_bit & X"7E" &        -- Preamb1
+                            start_bit & stop_bit & X"5A" &        -- Preamb2
+                            start_bit & stop_bit & X"A5" & "01";                                                                                                                                                 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
   -- 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -381,6 +433,7 @@ PORT map (
   Date_in                     => Date_in_i, 
   Month_Century_in            => Month_Century_in_i,   
   Year_in                     => Year_in_i, 
+  Write_RTC                   => SET_Timer_i,           -- Write new RTC
   Seconds_out                 => Seconds_out_i,          
   Minutes_out                 => Minutes_out_i,           
   Hours_out                   => Hours_out_i,           
@@ -420,6 +473,24 @@ Real_Time_Clock_Mux_1: entity work.Real_Time_Clock_Mux
     Ready                       => Real_Time_Clock_Ready_i  
     ); 
 
+-------------------------------------------------------------------------------
+-- Demux Instance
+------------------------------------------------------------------------------- 
+Real_Time_Clock_Demux_1: entity work.Real_Time_Clock_Demux
+port map (
+  CLK_I                => CLK_I_i,
+  RST_I                => RST_I_i,
+  UART_RXD             => Software_to_Controller_UART_RXD_i,
+  Seconds_out          => Seconds_in_i,          
+  Minutes_out          => Minutes_in_i,           
+  Hours_out            => Hours_in_i,           
+  Day_out              => Day_in_i,           
+  Date_out             => Date_in_i,
+  Month_Century_out    => Month_Century_in_i,    
+  Year_out             => Year_in_i,
+  SET_Timer            => SET_Timer_i
+);
+
 ------------------------------------------------------
 -- Baud Rate Generator Instance
 ------------------------------------------------------  
@@ -430,6 +501,8 @@ port map (
   baud_rate                           => 5,
   Baud_Rate_Enable                    => Baud_Rate_Enable_i
   );
+
+
 
 ------------------------------------------------------
 -- I2C Test for Real Time Clock
@@ -1141,6 +1214,17 @@ begin
     end if;
 
 end process;
+get_ser_port_data_digital_output: process
+begin
+    wait for 50 ms;
+    -- Write RTC 
+    for i in 0 to 140 loop             
+    Software_to_Controller_UART_RXD_i  <= write_rtc_cmd(i);
+        wait for bit_time_115200;
+    end loop;  -- i
+    wait for 3 ms;
+      
+end process get_ser_port_data_digital_output;
 
 strobe: process
 begin
