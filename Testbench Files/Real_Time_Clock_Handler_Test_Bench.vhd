@@ -556,6 +556,7 @@ begin
         Sample_Count              := 0; 
         Latch_Sample_Count        := 0; 
         PPS_In_i                  <= '0';
+        I2C_Test_State            <= Wait_Start;
         data2store                <= (others => (others => '0'));
     elsif (CLK_I_i'event and CLK_I_i = '1') then
 
@@ -798,9 +799,9 @@ begin
                             end if; 
                             if Byte_Count = 0 then
                                 -- For RW bit
-                                if SDA_i = '0' then
+                                if RnW_i = '0' then
                                     report "Write Mode" severity note;
-                                elsif SDA_i = '1' then
+                                elsif RnW_i = '1' then
                                     report "Read Mode" severity note;
                                 end if;
                             end if;
@@ -1320,9 +1321,8 @@ begin
                     if Int_SCL_i = '1' and Int_SDA_i = '1' then -- Stop Condition
                         Test_I2C_Write_State  <= StartEdge;
                     end if;
-
-        end case;
-
+            end case;
+    end case;
         -------------------------------
         -- Real Time Counters
         -------------------------------
@@ -1404,8 +1404,9 @@ begin
                 Months_Century_TestData_i   <= x"00";
                 Years_TestData_i            <= x"00";
                 Real_Time_Counters_State    <= mS_counter;
+
+            when others =>
         end case;
-    end case;
 
     end if;
 
