@@ -754,6 +754,8 @@ begin
                 ---------------------------------------------------
                 
             when Read_State =>
+
+
                             
                 case Test_I2C_Read_State is
                     when StartEdge =>
@@ -1199,6 +1201,8 @@ begin
                     when WaitStopData =>       
                         if Int_SCL_i = '1' and Int_SDA_i = '1' then -- 1st Stop Condition
                             Test_I2C_Read_State  <= ReStartEdge;
+                            --
+                            --Test_I2C_Read_State  <= StartEdge;
                         end if;
                 end case;
             -------------------------------
