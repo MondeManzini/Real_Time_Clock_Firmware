@@ -48,7 +48,8 @@ use work.Version_Ascii.all;
          Year_out                                        : out std_logic_vector(7 downto 0); 
 
 -- Flags
-         SET_Timer                                       : out std_logic
+         SET_Timer                                       : out std_logic;
+         GET_Timer                                       : out std_logic
       );
 
   end Real_Time_Clock_Demux;
@@ -167,7 +168,7 @@ architecture Arch_DUT of Real_Time_Clock_Demux is
    signal Month_Century_out_i      : std_logic_vector(7 downto 0) := X"00";
    signal Year_out_i               : std_logic_vector(7 downto 0) := X"00";
    signal Messag_Length_i          : integer range 0 to 50;
-
+   signal No_Data_i                 : std_logic;
   signal SerDataOut                : std_logic;
   
   signal Module_Number_i              : std_logic_vector(7 downto 0);
@@ -513,29 +514,32 @@ decode_cmd: process (CLK_I, RST_I)
 
    variable Wait_cnt           : integer range 0 to 50;
    variable got_byte_cnt       : integer range 0 to 10;
+   variable bit_counter        : integer range 0 to 100;
   
 begin  
    if RST_I = '0' then       
-      cmd_state                                 <= idle;  
-      Seconds_out_i                             <= (others=> '0');
-      Minutes_out_i                             <= (others=> '0');
-      Hours_out_i                               <= (others=> '0');
-      Day_out_i                                 <= (others=> '0');
-      Date_out_i                                <= (others=> '0');
-      Month_Century_out_i                       <= (others=> '0');
-      Year_out_i                                <= (others=> '0');
-      Seconds_out                               <= (others=> '0');
-      Minutes_out                               <= (others=> '0');
-      Hours_out                                 <= (others=> '0');
-      Day_out                                   <= (others=> '0');
-      Date_out                                  <= (others=> '0');
-      Month_Century_out                         <= (others=> '0');
-      Year_out                                  <= (others=> '0');
-      CRC_byte_i                                <= (others=> '0');
-      wait_cnt                                  := 0;
-      got_byte_cnt                              := 0;
-      SET_Timer                                 <= '0';
-      CRC_out                                   <= '0';
+      cmd_state            <= idle;  
+      Seconds_out_i        <= (others=> '0');
+      Minutes_out_i        <= (others=> '0');
+      Hours_out_i          <= (others=> '0');
+      Day_out_i            <= (others=> '0');
+      Date_out_i           <= (others=> '0');
+      Month_Century_out_i  <= (others=> '0');
+      Year_out_i           <= (others=> '0');
+      Seconds_out          <= (others=> '0');
+      Minutes_out          <= (others=> '0');
+      Hours_out            <= (others=> '0');
+      Day_out              <= (others=> '0');
+      Date_out             <= (others=> '0');
+      Month_Century_out    <= (others=> '0');
+      Year_out             <= (others=> '0');
+      CRC_byte_i           <= (others=> '0');
+      wait_cnt             := 0;
+      got_byte_cnt         := 0;
+      SET_Timer            <= '0';
+      GET_Timer            <= '0';
+      No_Data_i            <= '0';
+      CRC_out              <= '0';
    elsif CLK_I'event and CLK_I = '1' then 
 
        if wd_timer = '1' then          
@@ -607,8 +611,11 @@ begin
             CRC_out <= '0'; 
               case Mode_i  is
                                         
-                  when X"80" =>                       -- Mode Time Stamp
+                  when X"80" =>                       -- Mode Set Time Stamp
                      cmd_state           <= get_time_sec;
+
+                  when X"81" =>                       -- Mode Get Time Stamp
+                     cmd_state           <= Active;
 
                   when others =>               
                      cmd_state <= idle;
@@ -715,10 +722,14 @@ begin
                Day_out                    <= Day_out_i;
                Date_out                   <= Date_out_i;
                Month_Century_out          <= Month_Century_out_i;
-               Year_out                   <= Year_out_i;
-               SET_Timer                  <= '1';
+               Year_out                   <= Year_out_i;                                 
+               No_Data_i   <= '0';
+               SET_Timer   <= '1';
                cmd_state                  <= reset_trigger;
-                  
+            elsif Mode_i = X"81" then
+               GET_Timer   <= '1';
+               SET_Timer   <= '0';
+               cmd_state   <= reset_trigger;
             end if;  
 
             when version_loader =>  
@@ -727,6 +738,7 @@ begin
             when reset_trigger =>
                  got_byte_cnt                               := 0;
                  SET_Timer                                  <= '0'; 
+                 GET_Timer                                  <= '0'; 
                  cmd_state                                  <= idle;
 
             when others =>     

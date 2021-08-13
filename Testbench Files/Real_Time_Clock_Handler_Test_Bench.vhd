@@ -165,42 +165,40 @@ signal Year_in_i              : std_logic_vector(7 downto 0);
 signal Ack_Error_i            : std_logic;
 signal SDA_i                  : std_logic;
 signal SCL_i                  : std_logic;  
-signal lock_Out_i             : std_logic;
-signal lock_Out2_i            : std_logic;
-signal I2C_Busy_i               : std_logic;
-signal Busy_i                 : std_logic;
-signal Data_RD_i              : std_logic_vector(7 downto 0);
-signal Start_i                : std_logic;
-signal lockout_i              : std_logic;
-signal initialation_Status_i  : std_logic;
-signal TestData               : std_logic_vector(7 downto 0);
-
-signal display_version_lock :STD_LOGIC;
-signal Version_Register_std_logic : string(1 to 28);
+signal lock_Out_i                   : std_logic;
+signal lock_Out2_i                  : std_logic;
+signal I2C_Busy_i                   : std_logic;
+signal Busy_i                       : std_logic;
+signal Data_RD_i                    : std_logic_vector(7 downto 0);
+signal Start_i                      : std_logic;
+signal lockout_i                    : std_logic;
+signal initialation_Status_i        : std_logic;
+signal TestData                     : std_logic_vector(7 downto 0);
+signal UART_TXD_i                   : std_logic;
+signal display_version_lock         : STD_LOGIC;
+signal Version_Register_std_logic   : string(1 to 28);
 
 ----------------------------------------------------------------
 -- Real Time Clock Mux Component and Signals
 ----------------------------------------------------------------
-component Real_Time_Clock_I2C_Mux is 
+component Real_Time_Clock_Mux is
     port(
-    Clk                 : in  std_logic;
-    RST_I               : in  std_logic;
-    UART_TXD            : out std_logic;
-    Busy                : out std_logic;
-    Get_Sample          : out std_logic;
-    RTC_Busy            : in std_logic;
-    Initialation_Status : in std_logic;
-    Seconds             : in std_logic_vector(7 downto 0);  
-    Minutes             : in std_logic_vector(7 downto 0);
-    Hours               : in std_logic_vector(7 downto 0);
-    Day                 : in std_logic_vector(7 downto 0);
-    Date                : in std_logic_vector(7 downto 0);
-    Month_Century       : in std_logic_vector(7 downto 0);
-    Year                : in std_logic_vector(7 downto 0);
-    Baud_Rate_Enable    : in std_logic;  
-    Ready               : in std_logic
+    CLK_I                       : in  std_logic;
+    RST_I                       : in  std_logic;
+    UART_TXD                    : out std_logic;
+    Real_Time_Clock_Request     : in std_logic;
+    Seconds_out                 : in std_logic_vector(7 downto 0); 
+    Minutes_out                 : in std_logic_vector(7 downto 0); 
+    Hours_out                   : in std_logic_vector(7 downto 0); 
+    Day_out                     : in std_logic_vector(7 downto 0); 
+    Date_out                    : in std_logic_vector(7 downto 0); 
+    Month_Century_out           : in std_logic_vector(7 downto 0); 
+    Year_out                    : in std_logic_vector(7 downto 0); 
+    Get_RTC                     : out std_logic;
+    Real_Time_Clock_Ready       : in std_logic;
+    Baud_Rate_Enable            : in  std_logic
     );
-end component;
+  end component Real_Time_Clock_Mux;
 
 ----------------------------------------------------------------------
 -- Demux Signals and Component
@@ -232,12 +230,13 @@ component Real_Time_Clock_Demux is
     Date_out                            : out std_logic_vector(7 downto 0); 
     Month_Century_out                   : out std_logic_vector(7 downto 0); 
     Year_out                            : out std_logic_vector(7 downto 0); 
-    SET_Timer                           : out std_logic 
+    SET_Timer                           : out std_logic;
+    GET_Timer                           : out std_logic 
     );
 end component Real_Time_Clock_Demux;
 
 signal SET_Timer_i                        : std_logic;
-
+signal GET_Timer                          : std_logic; 
 
 ----------------------------------------------------------------------
 -- Baud Rate for Mux Signals and Component
@@ -359,6 +358,8 @@ signal Day_Register_i                  : std_logic_vector(7 downto 0);
 signal Date_Register_i                 : std_logic_vector(7 downto 0); 
 signal Mon_Cent_Register_i             : std_logic_vector(7 downto 0); 
 signal Year_Register_i                 : std_logic_vector(7 downto 0); 
+signal Real_Time_Clock_Request_i       : std_logic;
+
 -- Build State
 -- Good Build State 
 ------------------------------------------
@@ -379,7 +380,15 @@ signal write_rtc_cmd        : std_logic_vector(140 downto 0):=
                             start_bit & stop_bit & X"23" &        -- Length
                             start_bit & stop_bit & X"7E" &        -- Preamb1
                             start_bit & stop_bit & X"5A" &        -- Preamb2
-                            start_bit & stop_bit & X"A5" & "01";                                                                                                                                                 
+                            start_bit & stop_bit & X"A5" & "01";    
+                            
+signal read_rtc : std_logic_vector(50 downto 0):=                                
+    stop_bit & X"81" &        -- Mode
+    start_bit & stop_bit & X"23" &        -- Length
+    start_bit & stop_bit & X"7E" &        -- Preamb1
+    start_bit & stop_bit & X"5A" &        -- Preamb2
+    start_bit & stop_bit & X"A5" & "01";  -- Preamb1
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
   -- 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -468,21 +477,20 @@ PORT map (
 ------------------------------------------------------   
 Real_Time_Clock_Mux_1: entity work.Real_Time_Clock_Mux
   PORT map (
-    Clk                         => CLK_I_i,     
-    RST_I                       => RST_I_i,    
-    Busy                        => Busy_i,     
-    RTC_Busy                    => I2C_Busy_i, 
-    initialation_Status         => initialation_Status_i,
-    Get_Sample                  => Get_RTC_i,
-    Seconds                     => Seconds_out_i,          
-    Minutes                     => Minutes_out_i,           
-    Hours                       => Hours_out_i,           
-    Day                         => Day_out_i,           
-    Date                        => Date_out_i,
-    Month_Century               => Month_Century_out_i,    
-    Year                        => Year_out_i,   
-    Baud_Rate_Enable            => Baud_Rate_Enable_i,
-    Ready                       => Real_Time_Clock_Ready_i  
+    CLK_I                   => CLK_I_i,     
+    RST_I                   => RST_I_i,  
+    UART_TXD                => UART_TXD_i, 
+    Get_RTC                 => Get_RTC_i,
+    Real_Time_Clock_Request => Real_Time_Clock_Request_i,
+    Real_Time_Clock_Ready   => Real_Time_Clock_Ready_i,
+    Seconds_out             => Seconds_out_i,          
+    Minutes_out             => Minutes_out_i,           
+    Hours_out               => Hours_out_i,           
+    Day_out                 => Day_out_i,           
+    Date_out                => Date_out_i,
+    Month_Century_out       => Month_Century_out_i,    
+    Year_out                => Year_out_i,   
+    Baud_Rate_Enable        => Baud_Rate_Enable_i
     ); 
 
 -------------------------------------------------------------------------------
@@ -500,7 +508,8 @@ port map (
   Date_out             => Date_in_i,
   Month_Century_out    => Month_Century_in_i,    
   Year_out             => Year_in_i,
-  SET_Timer            => SET_Timer_i
+  SET_Timer            => SET_Timer_i,
+  GET_Timer            => Real_Time_Clock_Request_i
 );
 
 ------------------------------------------------------
@@ -513,8 +522,6 @@ port map (
   baud_rate                           => 5,
   Baud_Rate_Enable                    => Baud_Rate_Enable_i
   );
-
-
 
 ------------------------------------------------------
 -- I2C Test for Real Time Clock
@@ -594,14 +601,6 @@ begin
         else
             Int_SDA_i   <= '1';
         end if;  
-        -------------------------------------------
-        ---- Slave Select - RTC or Memory
-        -------------------------------------------
-        --if Slave_Address_Out = "1101000" then
-
-        --elsif Slave_Address_Out = "1010000" then
-
-        --end if;
 
         if Real_Time_Clock_Ready_i = '1' then
             Test_I2C_Read_State <= StartEdge;
@@ -613,11 +612,11 @@ begin
                     I2C_Test_State          <= Config_State;
                     Test_I2C_Config_State   <= StartEdge;
                 elsif initialation_Status_i = '1' then 
-                    --if Get_Sample_i = '1' then
+                    if SET_Timer_i = '1' then 
+                        I2C_Test_State  <= Write_State;
+                    else
                         I2C_Test_State  <= Read_State;
-                    --elsif SET_Timer_i = '1' then
-                    --    I2C_Test_State  <= Write_State;
-                    --end if;
+                    end if;
                 end if;    
         
             when Config_State =>
@@ -1037,33 +1036,7 @@ begin
                                         Test_I2C_Read_State <= RisingEdgeData_Data;
                                     when others =>
 
-                                end case;
-
-                                --if Assert_Data_Count = 1 then -- was 0
-                                --    SDA_i               <= Seconds_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 2 then    
-                                --    SDA_i               <= Minutes_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 3 then
-                                --    SDA_i               <= Hours_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 4 then
-                                --    SDA_i               <= Days_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 5 then
-                                --    SDA_i               <= Dates_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 6 then
-                                --    SDA_i               <= Months_Century_TestData_i(Cycle_Count);
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --elsif Assert_Data_Count = 7 then
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --    SDA_i               <= Years_TestData_i(Cycle_Count);
-                                --elsif Assert_Data_Count = 9 then
-                                --    Assert_Data_Count   := 0;
-                                --    Test_I2C_Read_State <= RisingEdgeData_Data;
-                                --end if;    
+                                end case; 
                             else
                                 Delay_Count          <= Delay_Count + 1;
                             end if;
@@ -1226,8 +1199,8 @@ begin
                 when StartFallingEdge =>
                     if Int_SCL_i = '0' then
                         if Start_Detected = '1' then
-                          Delay_Count           <= 0;
-                          Test_I2C_Write_State   <= WriteData;
+                            Delay_Count           <= 0;
+                            Test_I2C_Write_State   <= WriteData;
                         end if;
                     elsif Busy_i = '0' then
                         Test_I2C_Write_State     <= StartEdge;
@@ -1266,7 +1239,7 @@ begin
                                 Minutes_Register_i(Cycle_Count) <= Int_SDA_i;  -- Data Address 0x32
                                 Test_I2C_Write_State            <= FallingEdge;
                             else
-                                Delay_Count                 <= Delay_Count + 1;
+                                Delay_Count                     <= Delay_Count + 1;
                             end if;
 
                         when 3 =>
@@ -1383,11 +1356,16 @@ begin
         Days_TestData_int           <= conv_integer(Days_TestData_i);
         Months_Century_TestData_int <= conv_integer(Months_Century_TestData_i);
 
-        --if RnW_i = '1' then
-        --    Seconds_Register_i <= Seconds_TestData_i;
-        --else
-        --    Seconds_Register_i <= Seconds_TestData_i;
-        --end if;
+        if SET_Timer_i = '1' then
+            Real_Time_Counters_State    <= Idle;
+            Seconds_TestData_i          <= Seconds_in_i;
+            Minutes_TestData_i          <= Minutes_in_i;
+            Hours_TestData_i            <= Hours_in_i;
+            Days_TestData_i             <= Day_in_i;
+            Months_Century_TestData_i   <= Month_Century_in_i;
+            Years_TestData_i            <= Year_in_i;
+            Dates_TestData_i            <= Date_in_i;
+        end if;
 
         case Real_Time_Counters_State is 
 
@@ -1397,7 +1375,7 @@ begin
                     Seconds_TestData_i          <= Seconds_TestData_i + '1';
                 end if;
 
-                if Seconds_TestData_i = x"1d" then
+                if Seconds_TestData_i = x"03" then
                     Real_Time_Counters_State    <= Min_counter;
                     Seconds_TestData_i          <= x"00";                        
                 end if; 
@@ -1414,7 +1392,7 @@ begin
 
             when Hrs_counter =>
                 -- Hours counter
-                if Hours_TestData_i = x"06" then    -- 06 mns = 1 hrs for simulation purposes
+                if Hours_TestData_i = x"03" then    -- 06 mns = 1 hrs for simulation purposes
                     Real_Time_Counters_State    <= Days_counter;
                     Hours_TestData_i            <= x"00";
                 else
@@ -1424,7 +1402,7 @@ begin
 
             when Days_counter =>
                 -- Days counter
-                if Days_TestData_i = x"1e" then  
+                if Days_TestData_i = x"03" then  
                     Real_Time_Counters_State    <= Mon_Cen_counter;
                     Days_TestData_i             <= x"00";
                 else
@@ -1434,7 +1412,7 @@ begin
 
             when Mon_Cen_counter =>    
                 -- Months counter
-                if Months_Century_TestData_i = x"0c" then
+                if Months_Century_TestData_i = x"06" then
                     Real_Time_Counters_State    <= Years_counter;
                     Months_Century_TestData_i   <= x"00";
                 else
@@ -1464,14 +1442,21 @@ begin
 end process;
 get_ser_port_data_digital_output: process
 begin
-    wait for 50 ms;
+    wait for 4 ms;
+    -- Read RTC 
+    for i in 0 to 50 loop             
+        Software_to_Controller_UART_RXD_i  <= read_rtc(i);
+        wait for bit_time_115200;
+    end loop;  -- i
+    wait for 3 ms;
+
     -- Write RTC 
     for i in 0 to 140 loop             
     Software_to_Controller_UART_RXD_i  <= write_rtc_cmd(i);
         wait for bit_time_115200;
     end loop;  -- i
     wait for 3 ms;
-      
+     
 end process get_ser_port_data_digital_output;
 
 strobe: process
