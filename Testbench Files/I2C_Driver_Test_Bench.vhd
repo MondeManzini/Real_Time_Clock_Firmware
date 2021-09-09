@@ -2,8 +2,19 @@
 -- DESCRIPTION
 -- ===========
 --
--- This file contains  modules which make up a testbench
--- suitable for testing the "device under test".
+-- Edited By            : Monde Manzini
+--                      : Updated version
+-- Version              : 00.00.03
+-- Change Note          : 
+-- Tested               : 17/08/2021
+-- Test Bench file Name : I2C_Driver_Test_Bench
+-- located at           : (https://github.com/MondeManzini/Real_Time_Clock_Firmware/blob/main
+--                        /Testbench%20Files/I2C_Driver_Test_Bench.vhd)
+-- Test do file         : I2C_Driver_Test_Bench.do
+-- located at            (https://github.com/MondeManzini/Real_Time_Clock_Firmware/blob/main
+--                        /Modelsim)
+
+-- Outstanding          : Integration ATP and Approval
 --
 -------------------------------------------------------------------------------
 library ieee;
@@ -219,11 +230,10 @@ data_test: process(CLK_I_i, RST_I_i)
 
 begin
   if RST_I_i = '0' then
-    Count           := 0;
-    Address_i       <= "0000000";
-    RnW_i           <= '0';
-    lock_Out_i      <= '0';
-    I2C_Test_State  <= Wait_Start;
+    Count                       := 0;
+    Address_i                   <= "0000000";
+    RnW_i                       <= '0';
+    lock_Out_i                  <= '0';
     Delay_Count                 <= 0;
     Cycle_Count                 := 0;   
     Assert_Data_Count           := 0;
@@ -234,15 +244,16 @@ begin
     Hours_TestData_i            <= x"00";
     Days_TestData_i             <= x"00";
     Dates_TestData_i            <= x"00";
-    Months_Century_TestData_i <= x"00";
-    Years_TestData_i          <= x"00";
-    Data_WR_i                 <= x"00";
+    Months_Century_TestData_i   <= x"00";
+    Years_TestData_i            <= x"00";
+    Data_WR_i                   <= x"00";
     SDA_i                       <= 'Z';
     Int_SCL_i                   <= '0';
     Start_Detected              <= '0';
     Byte_Address                <= '0';
     Test_Data_i                 <= X"00";
     Test_Byte_i                 <= X"00";
+    I2C_Test_State              <= Wait_Start;
     I2C_Test_State              <= Wait_Start;
   elsif (CLK_I_i'event and CLK_I_i = '1') then
 
@@ -257,10 +268,6 @@ begin
     else
       Int_SDA_i   <= '1';
     end if;  
-
-    if Real_Time_Clock_Ready_i = '1' then
-      Test_I2C_Read_State <= StartEdge;
-    end if;
 
     case I2C_Test_State is
       when Wait_Start =>
