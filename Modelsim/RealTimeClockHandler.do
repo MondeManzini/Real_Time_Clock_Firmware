@@ -84,8 +84,11 @@ add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Real_T
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/got_byte
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/cmd_state
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/decode_cmd/got_byte_cnt
+add wave -noupdate /real_time_clock_handler_test_bench/Write_Done_i
+add wave -noupdate /real_time_clock_handler_test_bench/Read_Done_i
+add wave -noupdate /real_time_clock_handler_test_bench/SET_Timer_Latch_i
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {12072005382 ps} 0} {{Cursor 2} {98982339352 ps} 0}
+WaveRestoreCursors {{Cursor 1} {24068010076 ps} 0} {{Cursor 2} {98982339352 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 160
 configure wave -valuecolwidth 124
@@ -101,4 +104,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ms
 update
-WaveRestoreZoom {0 ps} {30280341 ns}
+WaveRestoreZoom {6072599500 ps} {112609589500 ps}
