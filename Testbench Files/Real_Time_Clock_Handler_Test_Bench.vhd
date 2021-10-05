@@ -568,6 +568,7 @@ begin
         Latch_Sample_Count        := 0; 
         PPS_In_i                  <= '0';
         I2C_Test_State            <= Wait_Start;
+        Real_Time_Counters_State  <= mS_counter;
         data2store                <= (others => (others => '0'));
         Read_Done_i               <= '0';
         Write_Done_i              <= '0';
@@ -612,6 +613,11 @@ begin
 
         if Real_Time_Clock_Ready_i = '1' then
             Test_I2C_Read_State <= StartEdge;
+        end if;
+
+        if SET_Timer_i = '1' then
+            I2C_Test_State      <= Write_State;
+            --Test_I2C_Read_State <= ReStartEdge;
         end if;
 
         case I2C_Test_State is
@@ -809,23 +815,13 @@ begin
                         end if;
                                                 
                     when ReadData =>     -- Read Slave Address 0xd0 Register Address 0x
-                        --if Byte_Count >= 0 and Byte_Count < 2 then
-                            if Delay_Count = 31 then
-                                Test_Byte_i(Cycle_Count)    <= Int_SDA_i;  -- Data Address 0x32
-                                Test_I2C_Read_State         <= FallingEdge;
-                            else
-                                Delay_Count                 <= Delay_Count + 1;
-                                Test_I2C_Read_State         <= ReadData;
-                            end if; 
-                            --if Byte_Count = 0 then
-                            --    -- For RW bit
-                            --    if RnW_i = '0' then
-                            --        report "Write Mode" severity note;
-                            --    elsif RnW_i = '1' then
-                            --        report "Read Mode" severity note;
-                            --    end if;
-                            --end if;
-                        --end if;    
+                        if Delay_Count = 31 then
+                            Test_Byte_i(Cycle_Count)    <= Int_SDA_i;  -- Data Address 0x32
+                            Test_I2C_Read_State         <= FallingEdge;
+                        else
+                            Delay_Count                 <= Delay_Count + 1;
+                            Test_I2C_Read_State         <= ReadData;
+                        end if;   
 
                     when FallingEdge =>
                         if Int_SCL_i = '0' then
@@ -905,9 +901,9 @@ begin
                             Byte_Count          <= 0; 
                             Assert_Data_Count   := 0; 
                             Test_I2C_Read_State <= StartFallingEdgeData_SA;
-                            Read_Done_i         <= '0';
-                        else
-                            Read_Done_i         <= '0';
+                            --Read_Done_i         <= '0';
+                        --else
+                            --Read_Done_i         <= '0';
                         end if; 
                         
                     when StartFallingEdgeData_SA =>
@@ -960,7 +956,7 @@ begin
                                 Delay_Count         <= 0;
                                 Cycle_Count         := 8;
                                 Byte_Count          <= Byte_Count + 1;
-                                -- SDA_i               <= 'Z';         -- Release bus for master ack
+                                SDA_i               <= 'Z';         -- Release bus for master ack
                                 Test_I2C_Read_State <= WriteAckData_SA;
                             else
                                 Delay_Count         <= 0;
@@ -972,7 +968,7 @@ begin
                     when WriteAckData_SA =>
                         if Delay_Count = 31 then
                             Delay_Count         <= 0;   
-                            -- SDA_i               <= '0';     -- Assert Slave ACK
+                            SDA_i               <= '0';     -- Assert Slave ACK
                             Test_I2C_Read_State <= RisingEdgeAckData_SA;
                         else              
                             Delay_Count         <= Delay_Count + 1;   
@@ -1129,10 +1125,11 @@ begin
                         when FallingEdgeAckData_Data =>       
                             if Int_SCL_i = '0' then
                                 Delay_Count         <= 0;
-                                if Byte_Count > 6 then
+                                if Byte_Count > 7 then
                                     Byte_Count          <= 0; 
                                     Delay_Count         <= 0;
                                     Test_I2C_Read_State <= AckRisingEdgeData;
+                                    Read_Done_i         <= '1';
                                 else
                                     Delay_Count         <= 0;
                                     Test_I2C_Read_State <= WriteData_Data;
@@ -1168,9 +1165,9 @@ begin
                         Byte_Count           <= 0;  
                         Assert_Data_Count    := 0;
                         Test_I2C_Write_State <= StartFallingEdge;
-                        Write_Done_i         <= '0';
-                    else
-                        Write_Done_i         <= '0';
+                        --Write_Done_i         <= '0';
+                    --else
+                        --Write_Done_i         <= '0';
                     end if;
 
                 when StartFallingEdge =>
@@ -1211,7 +1208,7 @@ begin
                                             
                 when ReadData => 
                     case Byte_Count is
-                        when 1 =>
+                        when 0 =>
                             if Delay_Count = 31 then
                                 Seconds_Register_i(Cycle_Count) <= Int_SDA_i;  
                                 Test_I2C_Write_State            <= FallingEdge;
@@ -1219,7 +1216,7 @@ begin
                                 Delay_Count                     <= Delay_Count + 1;
                             end if;
                         
-                        when 2 =>
+                        when 1 =>
                             if Delay_Count = 31 then
                                 Minutes_Register_i(Cycle_Count) <= Int_SDA_i;  
                                 Test_I2C_Write_State            <= FallingEdge;
@@ -1227,7 +1224,7 @@ begin
                                 Delay_Count                     <= Delay_Count + 1;
                             end if;
 
-                        when 3 =>
+                        when 2 =>
                             if Delay_Count = 31 then
                                 Hours_Register_i(Cycle_Count) <= Int_SDA_i; 
                                 Test_I2C_Write_State            <= FallingEdge;
@@ -1235,15 +1232,15 @@ begin
                                 Delay_Count                 <= Delay_Count + 1;
                             end if;
 
-                        when 4 =>
+                        when 3 =>
                             if Delay_Count = 31 then
                                 Day_Register_i(Cycle_Count) <= Int_SDA_i;  
-                                Test_I2C_Write_State            <= FallingEdge;
+                                Test_I2C_Write_State        <= FallingEdge;
                             else
                                 Delay_Count                 <= Delay_Count + 1;
                             end if;
 
-                        when 5 =>
+                        when 4 =>
                             if Delay_Count = 31 then
                                 Date_Register_i(Cycle_Count) <= Int_SDA_i;  
                                 Test_I2C_Write_State            <= FallingEdge;
@@ -1251,7 +1248,7 @@ begin
                                 Delay_Count                 <= Delay_Count + 1;
                             end if;
 
-                        when 6 =>
+                        when 5 =>
                             if Delay_Count = 31 then
                                 Mon_Cent_Register_i(Cycle_Count) <= Int_SDA_i;  
                                 Test_I2C_Write_State            <= FallingEdge;
@@ -1259,10 +1256,10 @@ begin
                                 Delay_Count                 <= Delay_Count + 1;
                             end if;
 
-                        when 7 =>
+                        when 6 =>
                             if Delay_Count = 31 then
                                 Year_Register_i(Cycle_Count) <= Int_SDA_i;  
-                                Test_I2C_Write_State            <= FallingEdge;
+                                Test_I2C_Write_State         <= FallingEdge;
                             else
                                 Delay_Count                 <= Delay_Count + 1;
                             end if;
@@ -1308,25 +1305,28 @@ begin
 
                 when FallingEdgeAck =>       
                     if Int_SCL_i = '0' and Delay_Count = 31 then
-                        Delay_Count             <= 0;
-                        if Byte_Count > 7 then
-                            Test_I2C_Write_State <= AckRisingEdge;
-                            Byte_Count          <= 0;
+                        Delay_Count                 <= 0;
+                        if Byte_Count = 6 then
+                            Test_I2C_Write_State    <= AckRisingEdge;
+                            Byte_Count              <= 0;
                         else
-                            Test_I2C_Write_State <= WriteData;
+                            Test_I2C_Write_State    <= WriteData;
                         end if;
                     else
-                        Delay_Count     <= Delay_Count + 1;
+                        Delay_Count                 <= Delay_Count + 1;
                     end if;   
 
                 when AckRisingEdge =>    
                     if Int_SCL_i = '1' then
-                        Test_I2C_Write_State  <= WaitStop;
+                        Test_I2C_Write_State    <= WaitStop;
+                        Int_SDA_i                   <= '1';
                     end if;    
 
                 when WaitStop =>       
                     if Int_SCL_i = '1' and Int_SDA_i = '1' then -- Stop Condition
-                        Test_I2C_Write_State  <= StartEdge;
+                        Test_I2C_Write_State    <= StartEdge;
+                        I2C_Test_State          <= Read_State;
+                        --SDA_i                  <= '0';
                     end if;
             end case;
     end case;
@@ -1341,9 +1341,9 @@ begin
 
         if SET_Timer_i = '1' then
             Real_Time_Counters_State    <= Idle;
-            SET_Timer_Latch_i           <= '1';
+            --SET_Timer_Latch_i           <= '1';
             --Seconds_TestData_i          <= Seconds_in_i;
-            --Minutes_TestData_i          <= Minutes_in_i;
+           -- Minutes_TestData_i          <= Minutes_in_i;
             --Hours_TestData_i            <= Hours_in_i;
             --Days_TestData_i             <= Day_in_i;
             --Months_Century_TestData_i   <= Month_Century_in_i;
@@ -1353,13 +1353,31 @@ begin
 
         case Real_Time_Counters_State is 
 
+            when Idle =>
+                --if SET_Timer_Latch_i = '1' then
+                if Write_Done_i = '1' and Read_Done_i = '1' then
+                  --  SET_Timer_Latch_cnt := 0;
+                    --Seconds_TestData_i          <= x"00";
+                    --Minutes_TestData_i          <= x"00";
+                    --Hours_TestData_i            <= x"00";
+                    --Days_TestData_i             <= x"00";
+                    --Months_Century_TestData_i   <= x"00";
+                    --Years_TestData_i            <= x"00";
+                    Real_Time_Counters_State    <= mS_counter;
+                else
+                --    SET_Timer_Latch_cnt         := SET_Timer_Latch_cnt + 1;
+                end if;
+               -- end if;
+
             when mS_counter =>
+                Write_Done_i    <= '0';
+                Read_Done_i     <= '0';
                 -- Seconds counter
                 if OnemS_sStrobe = '1' then
-                    Seconds_TestData_i          <= Seconds_TestData_i + '1';
+                    Seconds_TestData_i  <= Seconds_TestData_i + '1';
                 end if;
 
-                SET_Timer_Latch_i           <= '0';
+                SET_Timer_Latch_i           <= '1';
 
                 if Seconds_TestData_i = x"03" then
                     Real_Time_Counters_State    <= Min_counter;
@@ -1410,23 +1428,6 @@ begin
                 -- Months counter
                 Years_TestData_i   <= Years_TestData_i + '1';
                 Real_Time_Counters_State    <= Idle;
-
-            when Idle =>
-                if SET_Timer_Latch_i = '1' then
-                    if Write_Done_i = '1' and Read_Done_i = '1' then
-                      --  SET_Timer_Latch_cnt := 0;
-                        Seconds_TestData_i          <= x"00";
-                        Minutes_TestData_i          <= x"00";
-                        Hours_TestData_i            <= x"00";
-                        Days_TestData_i             <= x"00";
-                        Months_Century_TestData_i   <= x"00";
-                        Years_TestData_i            <= x"00";
-                        Real_Time_Counters_State    <= mS_counter;
-                    else
-                    --    SET_Timer_Latch_cnt         := SET_Timer_Latch_cnt + 1;
-                    end if;
-                end if;
-                
 
             when others =>
         end case;

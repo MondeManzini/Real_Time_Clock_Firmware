@@ -22,6 +22,7 @@ add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Slave_Address_Out
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Slave_read_nWrite
 add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Slave_Data_Out
+add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Write_RTC
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Get_Sample
 add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Seconds_out
 add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Minutes_out
@@ -76,19 +77,19 @@ add wave -noupdate /real_time_clock_handler_test_bench/Test_I2C_Write_State
 add wave -noupdate /real_time_clock_handler_test_bench/i2c_data_test/Assert_Data_Count
 add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Test_Byte_i
 add wave -noupdate /real_time_clock_handler_test_bench/Byte_Count
+add wave -noupdate /real_time_clock_handler_test_bench/Write_Done_i
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Counters_State
+add wave -noupdate /real_time_clock_handler_test_bench/Read_Done_i
+add wave -noupdate /real_time_clock_handler_test_bench/SET_Timer_Latch_i
 add wave -noupdate -divider Demux
-add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Write_RTC
+add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/SET_Timer
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/GET_Timer
 add wave -noupdate -radix hexadecimal /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/byte_received
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/got_byte
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/cmd_state
 add wave -noupdate /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1/decode_cmd/got_byte_cnt
-add wave -noupdate /real_time_clock_handler_test_bench/Write_Done_i
-add wave -noupdate /real_time_clock_handler_test_bench/Read_Done_i
-add wave -noupdate /real_time_clock_handler_test_bench/SET_Timer_Latch_i
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {24068010076 ps} 0} {{Cursor 2} {98982339352 ps} 0}
+WaveRestoreCursors {{Cursor 1} {37093828715 ps} 0} {{Cursor 2} {98982339352 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 160
 configure wave -valuecolwidth 124
@@ -104,4 +105,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ms
 update
-WaveRestoreZoom {6072599500 ps} {112609589500 ps}
+WaveRestoreZoom {48037451950 ps} {102734870950 ps}
