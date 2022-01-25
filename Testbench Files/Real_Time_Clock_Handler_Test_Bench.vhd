@@ -82,6 +82,11 @@ component I2C_Driver IS
     );                   
 END component I2C_Driver;
 
+signal Real_Time_Clock_Handler_Version_Request_i   : std_logic;
+signal Real_Time_Clock_Handler_Version_Name_i      : std_logic_vector(255 downto 0);  
+signal Real_Time_Clock_Handler_Version_Number_i    : std_logic_vector(63 downto 0); 
+signal Real_Time_Clock_Handler_Version_Ready_i     : std_logic;
+
 ----------------------------------------------------------------------
 -- RTC I2C Handler Test Bench Component and Signals
 ----------------------------------------------------------------------
@@ -472,7 +477,11 @@ PORT map (
   Date_out_mem                => Date_out_mem_i,
   Month_Century_out_mem       => Month_Century_out_mem_i,
   Year_out_mem                => Year_out_mem_i,
-  Ready_mem                   => Ready_mem_i  
+  Ready_mem                   => Ready_mem_i,
+  Real_Time_Clock_Handler_Version_Request   => Real_Time_Clock_Handler_Version_Request_i, 
+  Real_Time_Clock_Handler_Version_Name      => Real_Time_Clock_Handler_Version_Name_i, 
+  Real_Time_Clock_Handler_Version_Number    => Real_Time_Clock_Handler_Version_Number_i,
+  Real_Time_Clock_Handler_Version_Ready     => Real_Time_Clock_Handler_Version_Ready_i   
   );  
 
 ------------------------------------------------------
@@ -901,9 +910,6 @@ begin
                             Byte_Count          <= 0; 
                             Assert_Data_Count   := 0; 
                             Test_I2C_Read_State <= StartFallingEdgeData_SA;
-                            --Read_Done_i         <= '0';
-                        --else
-                            --Read_Done_i         <= '0';
                         end if; 
                         
                     when StartFallingEdgeData_SA =>
@@ -956,7 +962,7 @@ begin
                                 Delay_Count         <= 0;
                                 Cycle_Count         := 8;
                                 Byte_Count          <= Byte_Count + 1;
-                                SDA_i               <= 'Z';         -- Release bus for master ack
+                                --SDA_i               <= 'Z';         -- Release bus for master ack
                                 Test_I2C_Read_State <= WriteAckData_SA;
                             else
                                 Delay_Count         <= 0;
@@ -968,7 +974,7 @@ begin
                     when WriteAckData_SA =>
                         if Delay_Count = 31 then
                             Delay_Count         <= 0;   
-                            SDA_i               <= '0';     -- Assert Slave ACK
+                            --SDA_i               <= '0';     -- Assert Slave ACK
                             Test_I2C_Read_State <= RisingEdgeAckData_SA;
                         else              
                             Delay_Count         <= Delay_Count + 1;   
@@ -1144,8 +1150,6 @@ begin
                     when WaitStopData =>       
                         if Int_SCL_i = '1' and Int_SDA_i = '1' then -- 1st Stop Condition
                             Test_I2C_Read_State  <= ReStartEdge;
-                            --
-                            --Test_I2C_Read_State  <= StartEdge;
                         end if;
                 end case;
 
@@ -1165,9 +1169,6 @@ begin
                         Byte_Count           <= 0;  
                         Assert_Data_Count    := 0;
                         Test_I2C_Write_State <= StartFallingEdge;
-                        --Write_Done_i         <= '0';
-                    --else
-                        --Write_Done_i         <= '0';
                     end if;
 
                 when StartFallingEdge =>
@@ -1340,15 +1341,7 @@ begin
         Months_Century_TestData_int <= conv_integer(Months_Century_TestData_i);
 
         if SET_Timer_i = '1' then
-            Real_Time_Counters_State    <= Idle;
-            --SET_Timer_Latch_i           <= '1';
-            --Seconds_TestData_i          <= Seconds_in_i;
-           -- Minutes_TestData_i          <= Minutes_in_i;
-            --Hours_TestData_i            <= Hours_in_i;
-            --Days_TestData_i             <= Day_in_i;
-            --Months_Century_TestData_i   <= Month_Century_in_i;
-            --Years_TestData_i            <= Year_in_i;
-            --Dates_TestData_i            <= Date_in_i;
+            Real_Time_Counters_State    <= Read_State;
         end if;
 
         case Real_Time_Counters_State is 
@@ -1356,13 +1349,6 @@ begin
             when Idle =>
                 --if SET_Timer_Latch_i = '1' then
                 if Write_Done_i = '1' and Read_Done_i = '1' then
-                  --  SET_Timer_Latch_cnt := 0;
-                    --Seconds_TestData_i          <= x"00";
-                    --Minutes_TestData_i          <= x"00";
-                    --Hours_TestData_i            <= x"00";
-                    --Days_TestData_i             <= x"00";
-                    --Months_Century_TestData_i   <= x"00";
-                    --Years_TestData_i            <= x"00";
                     Real_Time_Counters_State    <= mS_counter;
                 else
                 --    SET_Timer_Latch_cnt         := SET_Timer_Latch_cnt + 1;

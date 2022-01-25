@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Sep 09 07:24:38 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : Maser_Vibration_Test_Jig
+Top-level Entity Name : Maser_Vibration_Test_Jig
+Family : Cyclone IV E
+Total logic elements : 540
+    Total combinational functions : 402
+    Dedicated logic registers : 293
+Total registers : 293
+Total pins : 104
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

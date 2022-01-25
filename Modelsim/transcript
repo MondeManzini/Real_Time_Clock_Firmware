@@ -1,0 +1,2066 @@
+# Compile of I2C_Driver.vhd was successful with warnings.
+# Compile of Real_Time_Clock_I2C_Handler.vhd was successful.
+# Compile of Version_Ascii.vhd was successful.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 2 errors.
+# Compile of txt_util.vhd was successful.
+# Compile of Real_Time_Clock_Mux.vhd was successful.
+# Compile of test_bench_T.vhd was successful.
+# Compile of Baud_Rate_Generator.vhd was successful.
+# Compile of Real_Time_Clock_Demux.vhd was successful.
+# Compile of myfifo8.vhd was successful.
+# 10 compiles, 1 failed with 2 errors.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 2 errors.
+# Compile of I2C_Driver.vhd was successful with warnings.
+# Compile of Real_Time_Clock_I2C_Handler.vhd was successful.
+# Compile of Version_Ascii.vhd was successful.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 1 errors.
+# Compile of txt_util.vhd was successful.
+# Compile of Real_Time_Clock_Mux.vhd was successful.
+# Compile of test_bench_T.vhd was successful.
+# Compile of Baud_Rate_Generator.vhd was successful.
+# Compile of Real_Time_Clock_Demux.vhd was successful.
+# Compile of myfifo8.vhd was successful.
+# 10 compiles, 1 failed with 1 error.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 4 errors.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 4 errors.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 1 errors.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd was successful.
+vsim -gui work.real_time_clock_handler_test_bench
+# vsim -gui work.real_time_clock_handler_test_bench 
+# Start time: 14:47:36 on Oct 19,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.txt_util(body)
+# Loading work.version_ascii
+# Loading modelsim_lib.util(body)
+# Loading work.real_time_clock_handler_test_bench(archtest_bench)
+# Loading work.test_bench_t(archtest_bench_t)
+# Loading work.i2c_driver(logic)
+# Loading work.real_time_clock_i2c_handler(arch_dut)
+# Loading work.real_time_clock_mux(arch_dut)
+# Loading work.real_time_clock_demux(arch_dut)
+# Loading work.myfifo8(syn)
+# Loading lpm.lpm_components
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_shiftreg(lpm_syn)
+# Loading work.baud_rate_generator(arch_dut)
+# ** Warning: (vsim-8683) Uninitialized out port /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Ready_mem has no driver.
+# This port will contribute value (U) to the signal network.
+do C:/Users/User/Documents/GitHub/Work/Real_Time_Clock_Firmware/Modelsim/RealTimeClockHandler.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Monde  Hostname: MONDE-PC  ProcessID: 23168
+#           Attempting to use alternate WLF file "./wlft6qg96i".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft6qg96i
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-8683) Uninitialized out port /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Ready_mem has no driver.
+# This port will contribute value (U) to the signal network.
+run 100 ms
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 0 ps  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 0 ps  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 10 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 20 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 30 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 40 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 50 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 60 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 70 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 80 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 90 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 100 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 110 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4267110 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1
+# ** Note: Read Mode
+#    Time: 4493670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4493670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4496170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4496170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4498670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4498670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4501170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4501170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4503670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4503670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4506170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4506170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4508670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4508670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4511170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4511170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4516170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4516170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4516190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4516190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4518670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4518670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4518690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4518690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4521170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4521170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4521190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4521190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4523670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4523670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4523690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4523690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4526170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4526170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4526190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4526190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4528670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4528670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4528690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4528690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4531170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4531170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4531190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4531190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4533670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4533670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4533690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4533690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4538670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4538670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4538690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4538690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4541170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4541170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4541190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4541190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4543670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4543670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4543690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4543690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4546170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4546170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4546190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4546190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4548670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4548670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4548690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4548690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4551170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4551170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4551190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4551190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4553670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4553670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4553690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4553690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4556170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4556170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4556190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4556190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4561170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4561170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4561190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4561190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4563670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4563670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4563690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4563690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4566170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4566170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4566190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4566190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4568670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4568670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4568690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4568690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4571170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4571170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4571190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4571190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4573670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4573670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4573690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4573690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4576170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4576170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4576190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4576190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4578670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4578670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4578690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4578690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4583670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4583670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4583690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4583690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4586170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4586170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4586190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4586190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4588670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4588670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4588690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4588690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4591170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4591170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4591190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4591190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4593670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4593670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4593690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4593690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4596170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4596170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4596190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4596190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4598670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4598670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4598690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4598690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4601170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4601170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4601190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4601190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4606170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4606170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4606190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4606190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4608670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4608670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4608690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4608690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4611170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4611170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4611190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4611190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4613670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4613670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4613690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4613690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4616170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4616170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4616190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4616190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4618670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4618670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4618690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4618690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4621170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4621170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4621190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4621190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4623670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4623670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4623690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4623690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4628670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4628670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4628690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4628690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4631170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4631170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4631190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4631190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4633670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4633670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4633690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4633690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4636170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4636170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4636190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4636190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4638670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4638670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4638690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4638690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4641170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4641170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4641190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4641190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4643670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4643670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4643690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4643690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4646170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4646170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4646190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4646190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4651170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4651170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4651190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4651190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4653670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4653670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4653690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4653690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4656170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4656170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4656190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4656190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4658670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4658670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4658690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4658690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4661170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4661170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4661190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4661190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4663670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4663670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4663690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4663690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4666170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4666170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4666190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4666190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4668670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4668670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4668690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4668690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30866910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30866910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30869410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30869410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30871910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30871910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30874410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30874410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30876910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30876910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30879410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30879410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30881910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30881910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30884410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30884410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30889410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30889410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30889430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30889430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30891910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30891910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30891930 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30891930 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30894410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30894410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30894430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30894430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30901870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30901870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30901890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30901890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30904370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30904370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30904390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30904390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30906870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30906870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30906890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30906890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30909370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30909370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30909390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30909390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30911870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30911870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30911890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30911890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30916870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30916870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30916890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30916890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30919370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30919370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30919390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30919390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30921870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30921870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30921890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30921890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30924370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30924370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30924390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30924390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30926870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30926870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30926890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30926890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30929370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30929370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30929390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30929390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30931870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30931870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30931890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30931890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30934370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30934370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30934390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30934390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30939370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30939370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30939390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30939390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30941870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30941870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30941890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30941890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30944370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30944370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30944390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30944390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30946870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30946870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30946890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30946890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30949370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30949370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30949390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30949390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30951870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30951870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30951890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30951890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30954370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30954370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30954390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30954390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30956870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30956870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30956890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30956890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30961870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30961870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30961890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30961890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30964370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30964370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30964390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30964390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30966870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30966870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30966890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30966890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30969370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30969370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30969390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30969390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30971870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30971870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30971890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30971890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30974370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30974370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30974390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30974390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30976870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30976870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30976890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30976890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30979370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30979370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30979390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30979390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30984370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30984370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30984390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30984390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30986870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30986870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30986890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30986890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30989370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30989370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30989390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30989390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30991870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30991870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30991890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30991890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30994370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30994370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30994390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30994390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30996870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30996870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30996890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30996890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30999370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30999370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30999390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30999390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31001870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31001870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31001890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31001890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31006870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31006870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31006890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31006890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31009370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31009370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31009390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31009390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31011870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31011870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31011890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31011890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31014370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31014370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31014390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31014390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31016870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31016870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31016890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31016890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31019370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31019370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31019390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31019390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31021870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31021870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31021890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31021890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31024370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31024370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31024390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31024390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31029370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31029370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31029390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31029390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31031870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31031870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31031890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31031890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31034370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31034370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31034390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31034390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31036870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31036870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31036890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31036890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31039370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31039370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31039390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31039390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31041870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31041870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31041890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31041890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31044370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31044370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31044390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31044390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31046870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31046870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31046890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31046890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.real_time_clock_handler_test_bench(archtest_bench)
+# ** Warning: (vsim-8683) Uninitialized out port /real_time_clock_handler_test_bench/Real_Time_Clock_Handler_1/Ready_mem has no driver.
+# This port will contribute value (U) to the signal network.
+run 100 ms
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 0 ps  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 0 ps  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 10 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 20 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 30 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 40 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 50 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 60 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 70 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 80 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 90 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 100 ns  Iteration: 2  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Note: The version number of Main_Mux is 00.01.06.
+#    Time: 110 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Mux_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4267110 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench/Real_Time_Clock_Demux_1
+# ** Note: Read Mode
+#    Time: 4493670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4493670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4496170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4496170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4498670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4498670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4501170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4501170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4503670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4503670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4506170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4506170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4508670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4508670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4511170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4511170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4516170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4516170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4516190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4516190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4518670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4518670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4518690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4518690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4521170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4521170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4521190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4521190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4523670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4523670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4523690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4523690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4526170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4526170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4526190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4526190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4528670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4528670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4528690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4528690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4531170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4531170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4531190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4531190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4533670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4533670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4533690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4533690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4538670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4538670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4538690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4538690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4541170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4541170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4541190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4541190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4543670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4543670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4543690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4543690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4546170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4546170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4546190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4546190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4548670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4548670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4548690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4548690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4551170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4551170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4551190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4551190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4553670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4553670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4553690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4553690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4556170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4556170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4556190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4556190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4561170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4561170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4561190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4561190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4563670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4563670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4563690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4563690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4566170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4566170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4566190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4566190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4568670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4568670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4568690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4568690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4571170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4571170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4571190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4571190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4573670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4573670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4573690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4573690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4576170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4576170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4576190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4576190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4578670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4578670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4578690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4578690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4583670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4583670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4583690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4583690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4586170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4586170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4586190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4586190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4588670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4588670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4588690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4588690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4591170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4591170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4591190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4591190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4593670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4593670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4593690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4593690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4596170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4596170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4596190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4596190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4598670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4598670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4598690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4598690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4601170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4601170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4601190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4601190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4606170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4606170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4606190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4606190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4608670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4608670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4608690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4608690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4611170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4611170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4611190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4611190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4613670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4613670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4613690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4613690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4616170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4616170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4616190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4616190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4618670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4618670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4618690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4618690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4621170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4621170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4621190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4621190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4623670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4623670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4623690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4623690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4628670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4628670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4628690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4628690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4631170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4631170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4631190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4631190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4633670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4633670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4633690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4633690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4636170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4636170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4636190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4636190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4638670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4638670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4638690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4638690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4641170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4641170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4641190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4641190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4643670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4643670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4643690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4643690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4646170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4646170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4646190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4646190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4651170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4651170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4651190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4651190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4653670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4653670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4653690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4653690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4656170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4656170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4656190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4656190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4658670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4658670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4658690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4658690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4661170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4661170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4661190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4661190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4663670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4663670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4663690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4663690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4666170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4666170 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4666190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4666190 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4668670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 4668670 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 4668690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 4668690 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30866910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30866910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30869410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30869410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30871910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30871910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30874410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30874410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30876910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30876910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30879410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30879410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30881910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30881910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30884410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30884410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30889410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30889410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30889430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30889430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30891910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30891910 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30891930 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30891930 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30894410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30894410 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Write Mode
+#    Time: 30894430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30894430 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30901870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30901870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30901890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30901890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30904370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30904370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30904390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30904390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30906870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30906870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30906890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30906890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30909370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30909370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30909390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30909390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30911870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30911870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30911890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30911890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30916870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30916870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30916890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30916890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30919370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30919370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30919390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30919390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30921870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30921870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30921890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30921890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30924370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30924370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30924390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30924390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30926870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30926870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30926890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30926890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30929370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30929370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30929390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30929390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30931870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30931870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30931890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30931890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30934370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30934370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30934390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30934390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30939370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30939370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30939390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30939390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30941870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30941870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30941890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30941890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30944370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30944370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30944390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30944390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30946870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30946870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30946890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30946890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30949370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30949370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30949390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30949390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30951870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30951870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30951890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30951890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30954370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30954370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30954390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30954390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30956870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30956870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30956890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30956890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30961870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30961870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30961890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30961890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30964370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30964370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30964390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30964390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30966870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30966870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30966890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30966890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30969370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30969370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30969390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30969390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30971870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30971870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30971890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30971890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30974370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30974370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30974390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30974390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30976870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30976870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30976890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30976890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30979370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30979370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30979390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30979390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30984370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30984370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30984390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30984390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30986870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30986870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30986890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30986890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30989370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30989370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30989390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30989390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30991870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30991870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30991890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30991890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30994370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30994370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30994390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30994390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30996870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30996870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30996890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30996890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30999370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 30999370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 30999390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 30999390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31001870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31001870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31001890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31001890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31006870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31006870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31006890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31006890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31009370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31009370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31009390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31009390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31011870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31011870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31011890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31011890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31014370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31014370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31014390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31014390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31016870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31016870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31016890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31016890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31019370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31019370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31019390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31019390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31021870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31021870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31021890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31021890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31024370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31024370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31024390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31024390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31029370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31029370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31029390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31029390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31031870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31031870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31031890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31031890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31034370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31034370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31034390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31034390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31036870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31036870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31036890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31036890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31039370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31039370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31039390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31039390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31041870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31041870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31041890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31041890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31044370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31044370 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31044390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31044390 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31046870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Incorrect Mode
+#    Time: 31046870 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Read Mode
+#    Time: 31046890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# ** Note: Correct Mode
+#    Time: 31046890 ns  Iteration: 1  Instance: /real_time_clock_handler_test_bench
+# Compile of I2C_Driver.vhd was successful with warnings.
+# Compile of Real_Time_Clock_I2C_Handler.vhd was successful.
+# Compile of Version_Ascii.vhd was successful.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 1 errors.
+# Compile of txt_util.vhd was successful.
+# Compile of Real_Time_Clock_Mux.vhd was successful.
+# Compile of test_bench_T.vhd was successful.
+# Compile of Baud_Rate_Generator.vhd was successful.
+# Compile of Real_Time_Clock_Demux.vhd was successful.
+# Compile of myfifo8.vhd was successful.
+# 10 compiles, 1 failed with 1 error.
+# Compile of Real_Time_Clock_Handler_Test_Bench.vhd failed with 1 errors.
+# End time: 16:51:23 on Oct 19,2021, Elapsed time: 2:03:47
+# Errors: 0, Warnings: 5
